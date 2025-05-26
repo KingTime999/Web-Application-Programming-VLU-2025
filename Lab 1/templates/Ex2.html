@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Ex2.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Information</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>{{ student.name }}</td>
+            </tr>
+            <tr>
+                <th>Student ID</th>
+                <td>{{ student.student_id }}</td>
+            </tr>
+            <tr>
+                <th>Academic Year</th>
+                <td>{{ student.academic_year }}</td>
+            </tr>
+            <tr>
+                <th>Major</th>
+                <td>{{ student.major }}</td>
+            </tr>
+            <tr>
+                <th>Hobbies</th>
+                <td>
+                    <ul>
+                        {% for hobby in student.hobbies %}
+                            <li>{{ hobby }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
