@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+      <h2>FLOWER PURCHASE REGISTRATION</h2>
+      <p class="note">Please fill in all required information to receive your favorite flowers or ornamental plants.</p>
+      <label>Full Name: (*)</label><br>
+      <input type="text" name="fullName" required><br>
+      <label>Address: (*)</label><br>
+      <input type="text" name="address" required><br>
+      <label>Phone: (*)</label><br>
+      <input type="tel" name="phone" required><br>
+      <label>Email:</label><br>
+      <input type="email" name="email"><br>
+      <label>Flower:</label><br>
+      <select name="flowerType">
+        <option value="rose">Rose</option>
+        <option value="tulip">Tulip</option>
+        <option value="lily">Lily</option>
+      </select>
+      <select name="flowerColor">
+        <option value="red">Red</option>
+        <option value="white">White</option>
+        <option value="yellow">Yellow</option>
+      </select><br>
+      <label>Quantity: (*)</label><br>
+      <input type="number" name="quantity" required><br>
+      <label>Unit:</label><br>
+      <input type="radio" name="unit" value="branch"> Branch
+      <input type="radio" name="unit" value="pot"> Pot<br>
+      <label>Payment:</label><br>
+      <input type="radio" name="payment" value="cash"> Cash
+      <input type="radio" name="payment" value="bank"> Bank Transfer
+      <input type="radio" name="payment" value="mastercard"> MasterCard<br>
+      <label>Notes:</label><br>
+      <textarea name="notes"></textarea><br>
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
