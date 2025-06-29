@@ -1,2 +1,2 @@
 const name = "Van Lang IT";
-console.log (name);
+console.log(name);
