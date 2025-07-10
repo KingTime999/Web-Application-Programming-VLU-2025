@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Poll</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f8ff;
+            padding: 40px;
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 30px;
+            background-color: white;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        table {
+            margin: auto;
+            margin-top: 30px;
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vote for Your Favorite Pet!</h1>
+
+    <form method="POST">
+        {% for option in votes.keys() %}
+            <label>
+                <input type="radio" name="option" value="{{ option }}" required> {{ option }}
+            </label>
+        {% endfor %}
+        <button type="submit">Vote</button>
+    </form>
+
+    <h2>Poll Results</h2>
+    {% if total > 0 %}
+    <table>
+        <tr>
+            <th>Option</th>
+            <th>Votes</th>
+            <th>Percentage</th>
+        </tr>
+        {% for key, value in votes.items() %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ value }}</td>
+            <td>{{ percentages[key] }}%</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No votes yet. Be the first!</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+        input, select {
+            padding: 8px;
+            margin-top: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.3em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="{{ url_for('convert') }}">
+        <h2>Temperature Converter</h2>
+        <input type="text" name="temperature" placeholder="Enter temperature" required>
+        <select name="conversion">
+            <option value="CtoF">Celsius to Fahrenheit</option>
+            <option value="FtoC">Fahrenheit to Celsius</option>
+        </select>
+        <button type="submit">Convert</button>
+        {% if result %}
+        <div class="result">{{ result }}</div>
+        {% endif %}
+    </form>
+</body>
+</html>
